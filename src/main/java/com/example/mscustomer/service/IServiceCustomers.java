@@ -8,5 +8,7 @@ public interface IServiceCustomers {
 
     Flux<CustomerEntity> findAll();
 
+    Flux<CustomerEntity> findCustomerByDNI(int dni);
+
     Mono<CustomerEntity> save(CustomerEntity customer);
 }

@@ -18,6 +18,12 @@ public class ControllerCustomers {
         return service.findAll();
     }
 
+    @GetMapping("/getCustomersByDNI/{dni}")
+    public Flux<CustomerEntity> getCustomersByDNI(@PathVariable("dni") int dni) {
+
+        return service.findCustomerByDNI(dni);
+    }
+
     @PostMapping("/postCustomers")
     public Mono<CustomerEntity> postCustomers(@RequestBody CustomerEntity customer) {
         return service.save(customer);

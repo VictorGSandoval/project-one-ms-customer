@@ -18,9 +18,17 @@ public class ServiceCustomersImpl implements  IServiceCustomers{
         return repository.findAll();
     }
 
+
+
     @Override
     public Mono<CustomerEntity> save(CustomerEntity customer) {
 
         return repository.save(customer);
+    }
+
+    @Override
+    public Flux<CustomerEntity> findCustomerByDNI(int dni) {
+        return repository.findAll()
+                .filter(x -> x.getDni() == dni);
     }
 }
