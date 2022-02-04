@@ -27,8 +27,7 @@ public class ServiceCustomersImpl implements  IServiceCustomers{
     }
 
     @Override
-    public Flux<CustomerEntity> findCustomerByDNI(int dni) {
-        return repository.findAll()
-                .filter(x -> x.getDni() == dni);
+    public Flux<CustomerEntity> findCustomerByDni(int dni) {
+        return repository.findByDni(dni);
     }
 }

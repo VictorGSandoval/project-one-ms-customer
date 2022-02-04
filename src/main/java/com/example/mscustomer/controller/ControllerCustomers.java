@@ -19,9 +19,9 @@ public class ControllerCustomers {
     }
 
     @GetMapping("/getCustomersByDNI/{dni}")
-    public Flux<CustomerEntity> getCustomersByDNI(@PathVariable("dni") int dni) {
+    public Flux<CustomerEntity> getCustomersByDni(@PathVariable("dni") int dni) {
 
-        return service.findCustomerByDNI(dni);
+        return service.findCustomerByDni(dni);
     }
 
     @PostMapping("/postCustomers")
