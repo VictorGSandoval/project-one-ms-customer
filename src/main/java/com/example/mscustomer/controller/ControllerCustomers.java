@@ -14,7 +14,7 @@ public class ControllerCustomers {
     IServiceCustomers service;
 
     @GetMapping("/getCustomers")
-    public Flux<CustomerEntity> getCustomer() {
+    public Flux<CustomerEntity> getCustom() {
         return service.findAll();
     }
 
