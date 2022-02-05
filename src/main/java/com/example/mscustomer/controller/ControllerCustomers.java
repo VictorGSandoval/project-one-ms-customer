@@ -26,6 +26,18 @@ public class ControllerCustomers {
 
     @PostMapping("/postCustomers")
     public Mono<CustomerEntity> postCustomers(@RequestBody CustomerEntity customer) {
+
         return service.save(customer);
+    }
+
+    @PostMapping("/updateCustomer")
+    public Mono<CustomerEntity> updateCustomers(@RequestBody CustomerEntity customer) {
+
+        return service.update(customer);
+    }
+
+    @PostMapping("/delete/{id}")
+    void delete(@PathVariable("id") String id) {
+        service.delete(id);
     }
 }

@@ -26,8 +26,20 @@ public class ServiceCustomersImpl implements  IServiceCustomers{
         return repository.save(customer);
     }
 
+
+
     @Override
     public Flux<CustomerEntity> findCustomerByDni(int dni) {
         return repository.findByDni(dni);
+    }
+
+    @Override
+    public Mono<CustomerEntity> update(CustomerEntity customer) {
+        return repository.save(customer);
+    }
+
+    @Override
+    public void delete(String id) {
+        repository.deleteById(id).subscribe();
     }
 }
