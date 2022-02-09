@@ -6,13 +6,31 @@
 	},
 	"item": [
 		{
+			"name": "Listar Todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/Customer",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Registrar",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Victor\",\r\n    \"lastname\": \"Sandoval\",\r\n    \"dni\": \"60323411\",\r\n    \"typcustomer\": \"Personal\"\r\n}\r\n\r\n",
+					"raw": "{\r\n    \"id\": \"60323411\",\r\n    \"name\": \"Victor\",\r\n    \"lastname\": \"Sandoval\",\r\n    \"dni\": \"60323411\",\r\n    \"typcustomer\": \"Personal\"\r\n}\r\n\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,53 +38,32 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/postCustomers",
+					"raw": "localhost:8080/Customer",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"api",
-						"postCustomers"
+						"Customer"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Listar Todos",
+			"name": "Buscar por ID",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/api/getCustomers",
+					"raw": "localhost:8080/Customer/60323411",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"api",
-						"getCustomers"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Buscar por DNI",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/api/getCustomersByDNI/60323413",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"getCustomersByDNI",
-						"60323413"
+						"Customer",
+						"60323411"
 					]
 				}
 			},
@@ -101,7 +98,7 @@
 			"response": []
 		},
 		{
-			"name": "Eliminar por DNI",
+			"name": "Eliminar por ID",
 			"request": {
 				"method": "DELETE",
 				"header": [],
